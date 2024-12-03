@@ -1,0 +1,40 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+h1{
+  margin: 0;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+h1, footer, h2{
+  text-align: center;
+}
+body{
+  padding: 30px;
+  background-image: url(../src/assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
+}
+footer{
+  padding: 10px 0px;
+  border-top: 1px solid #fff;
+  font-weight: bold;
+}
+.question {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+h2 {
+  color: yellow;
+  font-size: 20px;
+}
