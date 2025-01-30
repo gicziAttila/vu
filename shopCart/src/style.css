@@ -1,0 +1,44 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body{
+  background-color: #efefef;
+  padding: 30px;
+}
+h1{
+  font-size: 28px;
+}
+h2{
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+h1, h2, h3{
+  font-weight: 700;
+}
+h1,h2{
+  text-align: center;
+}
+.price{
+  color: #3AB982;
+  font-weight: 700;
+}
+.btn{
+  background-color: #3AB982;
+  color: #FFFFFF;
+}
+.snow{
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  background-image: url('assets/snow.png');
+  height: 10px;
+  width: 10px;
+}
+.main{
+  position: relative;
+  height: 100vh;
+}
