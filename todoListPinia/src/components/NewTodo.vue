@@ -11,7 +11,7 @@ const qaState = todoState();
 const emits = defineEmits(['changeTodo'])
 
 const addNewTodo = () => {
-    qaState.addTodo(name.value, toDate.value, desc.value)
+    qaState.addTodo(name.value, toDate.value, desc.value, false)
     emits('changeTodo')
 }   
 

@@ -1,5 +1,5 @@
 <script setup>
-    import { screenings } from './state/state';
+    import { screenings } from './state/state.js';
     import { screeningsData } from './data/screenings';
     import {roomsData} from "./data/rooms.js";
     import Screening from "./classes/Screening.js"

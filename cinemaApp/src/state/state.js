@@ -18,7 +18,7 @@ export const screenings = defineStore("cinema", ()=>{
     }
 
     function setFilmId(id){
-        filmId.value = id;
+        filmId.value = id;0
     }
 
     function getFilmId(){

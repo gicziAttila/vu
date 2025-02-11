@@ -1,10 +1,14 @@
 export default class Todo{
+    #name;
+    #status;
+    #toDate;
+    #desc;
 
-    constructor(name, toDate, desc) {
-        this.name = name;
-        this.status = false;
-        this.toDate = toDate;
-        this.desc = desc;
+    constructor(name, toDate, desc, status) {
+        this.setDesc(desc)
+        this.setName(name)
+        this.setStatus(status)
+        this.setToDate(toDate)
 
         this.getName = this.getName.bind(this)
         this.getStatus = this.getStatus.bind(this)

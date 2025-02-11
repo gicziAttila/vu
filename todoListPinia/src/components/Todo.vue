@@ -2,20 +2,19 @@
 import { ref, watch, computed, watchEffect } from 'vue'
 import { todoState } from '../state/state.js'
 import Todo from '../classes/Todo.js'
-import { storeToRefs } from 'pinia'
 
 const qaState = todoState();
-const showExpanded = ref(false)
 var todoStatus = ref(false)
 
-const todoExpanded = (index) => {
-    showExpanded.value = !showExpanded.value
+const toggleStatus = (index) => {
+    qaState.getTodos()[index].toggleStatus();
+    qaState.changeKeepFresh();
 }
-const toggleTask = qaState.toggleStatus();
 
 
 </script>
 <template>
+    <p class="fresh">{{ qaState.getFresh() }}</p>
     <section v-for="(todo, index) in qaState.getTodos()" :key="todo.id">
         <div id="todo">
             <div>
@@ -25,16 +24,19 @@ const toggleTask = qaState.toggleStatus();
             <div>
                 <p class="statusPending" v-if="!todo.getStatus()">Pending</p>
                 <p class="statusCompleted" v-else>Completed</p>
-                <p id="button" @click="todoExpanded(index)">></p>
             </div>
         </div>
-        <div v-if="showExpanded" :class="{ expanded: showExpanded }">
+        <div>
             <p>{{ todo.getDesc() }}</p>
-            <button type="submit" @click="qaState.toggleStatus(index)">Done</button>
+            <button type="submit" @click="toggleStatus(index)">Done</button>
         </div>
     </section>
 </template>
 <style scoped>
+.fresh{
+    display: none;
+}
+
 #todo:first-of-type {
     border-top: 1px solid #ccc;
 }

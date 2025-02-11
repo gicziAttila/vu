@@ -27,7 +27,6 @@ const addNewTodo = () => {
       </div>
   </main>
 </template>
-
 <style scoped>
 header {
     margin: 30px 0 0 30px;
