@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Blog.vue";
 import BlogExpanded from "../components/BlogExpanded.vue";
-import Blog from "../classes/Blog";
+import UserBlogs from "../components/UserBlogs.vue";
 
 const routes = [
     {
@@ -9,15 +9,19 @@ const routes = [
         component: Home
     },
     {
-        path: "/blog-expanded",
+        path: "/blog-expanded/:id",
         component: BlogExpanded,
-        props: { blogList: Array, index: Number}
+        props: true
     },
+    {
+        path: "/user-blogs/:id",
+        component: UserBlogs,
+        props: true
+    }
 ]
-
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
 });
 
 export default router;

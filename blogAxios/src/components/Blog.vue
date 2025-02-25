@@ -22,7 +22,7 @@ setBlogList()
 <template>
     <section v-for="(blog, index) in blogList">
         <h1>{{ blog.getTitle() }}</h1>
-        <p>{{ blog.getBody()}}..<RouterLink to="blog-expanded" :blogList="blogList, index">Tovább</RouterLink></p>
+        <p>{{ blog.getBody() }}..<RouterLink :to="{ path: 'blog-expanded/' + blog.getId() }">Tovább</RouterLink></p>
     </section>
 </template>
 <style scoped>
@@ -36,9 +36,6 @@ setBlogList()
     }
     h1{
         color: darkslategrey;
-    }
-    h1::first-letter{
-        text-transform: capitalize;
     }
     span{
         color: lightgreen;
