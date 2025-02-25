@@ -44,7 +44,7 @@ onMounted(() => {
         <img src="https://placehold.co/600x400/orange/white">
         <p>{{ blog.getBody() }}</p>
         <p>{{ blog.getBody() }}</p>
-        <p>Szerző: <RouterLink :to="{ path: '/user-blogs/' + userId }">{{ userName }}</RouterLink></p>
+        <p>Szerző: <RouterLink :to="{ path: '/user-blogs/' + userId + '/' + blog.getId() }">{{ userName }}</RouterLink></p>
         <RouterLink to="/">Vissza a bejegyzésekhez</RouterLink>
     </section>
     <p v-else>Loading...</p>

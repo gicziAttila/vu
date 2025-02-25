@@ -5,12 +5,13 @@ import Blog from '../classes/Blog';
 import Comment from '../classes/Comment';
 
 const props = defineProps({
-    id: Number
+    userId: Number,
+    blogId: Number
 });
 const userName = ref("");
 
 const fetchUser = async () => {
-    await axios.get(`https://jsonplaceholder.typicode.com/users/${props.id}`)
+    await axios.get(`https://jsonplaceholder.typicode.com/users/${props.userId}`)
     .then(response => {
         userName.value = response.data.name;
         setBlogList()
@@ -26,7 +27,7 @@ const setBlogList = async() => {
     await axios.get("https://jsonplaceholder.typicode.com/posts")
     .then(response => {
         for (let i = 0; i < Object.keys(response.data).length; i++) {
-            if(response.data[i].userId == props.id){
+            if(response.data[i].userId == props.userId){
                 var blog = new Blog(response.data[i].id, response.data[i].title, response.data[i].body)
                 blogList.value.push(blog)   
             }
@@ -74,6 +75,6 @@ onMounted(() => {
             <li v-for="comment in blogComments">{{ comment.getEmail() }}<p>{{ comment.getComment() }}</p></li>
         </ul>
     </div>
-    <RouterLink :to="{ path: '/blog-expanded/' + props.id }">Vissza a bejegyzésehez</RouterLink>
+    <RouterLink :to="{ path: '/blog-expanded/' + props.blogId }">Vissza a bejegyzésehez</RouterLink>
 </template>
 <style scoped></style>

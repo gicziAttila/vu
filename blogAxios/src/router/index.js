@@ -14,7 +14,7 @@ const routes = [
         props: true
     },
     {
-        path: "/user-blogs/:id",
+        path: "/user-blogs/:userId/:blogId",
         component: UserBlogs,
         props: true
     }
